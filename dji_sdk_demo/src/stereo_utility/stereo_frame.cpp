@@ -297,12 +297,12 @@ void
 StereoFrame::calcObjectInfo(const darknet_ros_msgs::BoundingBoxesConstPtr &b_box,
                             visualization_msgs::MarkerArray &marker_array)
 {
-  ROS_INFO("Got %d detections", (int)b_box->boundingBoxes.size());
+  ROS_INFO("Got %d detections", (int)b_box->bounding_boxes.size());
 
   marker_array.markers.clear();
-  marker_array.markers.resize(b_box->boundingBoxes.size());
+  marker_array.markers.resize(b_box->bounding_boxes.size());
 
-  for (int i = 0; i < b_box->boundingBoxes.size(); ++i) {
+  for (int i = 0; i < b_box->bounding_boxes.size(); ++i) {
     visualization_msgs::Marker marker = marker_template_;
 
 
@@ -316,10 +316,10 @@ StereoFrame::calcObjectInfo(const darknet_ros_msgs::BoundingBoxesConstPtr &b_box
      */
 
     cv::Rect roi;
-    roi.x = b_box->boundingBoxes[i].xmin;
-    roi.y = b_box->boundingBoxes[i].ymin;
-    roi.width = b_box->boundingBoxes[i].xmax - b_box->boundingBoxes[i].xmin;
-    roi.height = b_box->boundingBoxes[i].ymax - b_box->boundingBoxes[i].ymin;
+    roi.x = b_box->bounding_boxes[i].xmin;
+    roi.y = b_box->bounding_boxes[i].ymin;
+    roi.width = b_box->bounding_boxes[i].xmax - b_box->bounding_boxes[i].xmin;
+    roi.height = b_box->bounding_boxes[i].ymax - b_box->bounding_boxes[i].ymin;
 
     float v = roi.y + roi.height*0.5;
     float u = roi.x + roi.width*0.5;
@@ -340,7 +340,7 @@ StereoFrame::calcObjectInfo(const darknet_ros_msgs::BoundingBoxesConstPtr &b_box
     stream_dist << std::fixed << std::setprecision(2) << distance;
     std::string distance_str = stream_dist.str();
 
-    marker.text = b_box->boundingBoxes[i].Class + "  " + distance_str + "m\n\tx:" + dist_x_str + "\n\ty:" + dist_y_str + "\n\tz:" + dist_z_str;
+    marker.text = b_box->bounding_boxes[i].Class + "  " + distance_str + "m\n\tx:" + dist_x_str + "\n\ty:" + dist_y_str + "\n\tz:" + dist_z_str;
     marker.pose.position.x = dist_x;
     marker.pose.position.y = dist_y;
     marker.pose.position.z = dist_z-1; // -1 to avoid point cloud and text occlusion
