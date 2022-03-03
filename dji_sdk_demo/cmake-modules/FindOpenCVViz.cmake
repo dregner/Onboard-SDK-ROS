@@ -10,6 +10,7 @@ if (NOT FOUND_OPENCV_VIZ)
             PATHS
             /usr/include/opencv2/viz
             /usr/local/include/opencv2/viz
+            /usr/local/opencv3/include/opencv2/viz
             /opt/local/include/opencv2/viz
             /sw/include/opencv2/viz
             PATH_SUFFIXES

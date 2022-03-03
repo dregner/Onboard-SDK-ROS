@@ -12,6 +12,7 @@ if (NOT FOUND_OPENCV_CONTRIB_IMG_PROC)
             PATHS
             /usr/include/opencv2/ximgproc
             /usr/local/include/opencv2/ximgproc
+            /usr/local/opencv3/include/opencv2/ximgproc
             /opt/local/include/opencv2/ximgproc
             /sw/include/opencv2/ximgproc
             PATH_SUFFIXES

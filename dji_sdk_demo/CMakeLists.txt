@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
         geometry_msgs
         dji_sdk
         image_transport # for message_filter
+	darknet_ros_msgs
         )
 
 find_package(DJIOSDK REQUIRED)
