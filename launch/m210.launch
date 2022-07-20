@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="dji_sdk" type="dji_sdk_node" name="dji_sdk" output="screen">
+    <node pkg="dji_osdk_ros" type="dji_vehicle_node" name="vehicle_node" output="screen">
     <param name="acm_name" type="string" value="/dev/ttyACM0"/>
     <param name="serial_name" type="string" value="/dev/ttyTHS1"/>
     <param name="baud_rate" type="int" value="1000000"/>

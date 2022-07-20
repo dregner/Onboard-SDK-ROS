@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     sensor_msgs
     message_filters # for message_filter
+    darknet_ros_msgs
   )
 
 ## System dependencies are found with CMake's conventions
@@ -250,6 +251,7 @@ catkin_package(
     nav_msgs
     std_msgs
     nmea_msgs
+    darknet_ros_msgs
 #  DEPENDS system_lib
 )
 

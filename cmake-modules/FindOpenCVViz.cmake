@@ -4,17 +4,17 @@
 
 if (NOT FOUND_OPENCV_VIZ)
 
-    find_path(OPENCV_VIZ
-            NAMES
-            viz3d.hpp
-            PATHS
-            /usr/include/opencv2/viz
-            /usr/local/include/opencv2/viz
-            /opt/local/include/opencv2/viz
-            /sw/include/opencv2/viz
-            PATH_SUFFIXES
-            opencv2
-            )
+find_path(OPENCV_VIZ
+        NAMES
+        viz3d.hpp
+        PATHS
+        /usr/include/opencv3/opencv2/viz
+        /usr/local/opencv3/include/opencv2/viz
+        /opt/local/include/opencv2/viz
+        /sw/include/opencv2/viz
+        PATH_SUFFIXES
+        opencv2/viz
+        )
 
     if(NOT OPENCV_VIZ STREQUAL OPENCV_VIZ-NOTFOUND)
         message(STATUS "Found viz3d in OpenCV, will use it to visualize point cloud")

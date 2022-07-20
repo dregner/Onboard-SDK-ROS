@@ -6,17 +6,17 @@
 
 if (NOT FOUND_OPENCV_CONTRIB_IMG_PROC)
 
-    find_path(OPENCV_CONTRIB_IMG_PROC
-            NAMES
-            disparity_filter.hpp
-            PATHS
-            /usr/include/opencv2/ximgproc
-            /usr/local/include/opencv2/ximgproc
-            /opt/local/include/opencv2/ximgproc
-            /sw/include/opencv2/ximgproc
-            PATH_SUFFIXES
-            ximgproc
-            )
+find_path(OPENCV_CONTRIB_IMG_PROC
+        NAMES
+        disparity_filter.hpp
+        PATHS
+        /usr/include/opencv3/opencv2/ximgproc
+        /usr/local/opencv3/include/opencv2/ximgproc
+        /opt/local/include/opencv2/ximgproc
+        /sw/include/opencv2/ximgproc
+        PATH_SUFFIXES
+        opencv2/ximgproc
+        )
 
     if(NOT OPENCV_CONTRIB_IMG_PROC STREQUAL OPENCV_CONTRIB_IMG_PROC-NOTFOUND)
         message(STATUS "Found ximgproc module in OpenCV, will use it to filter disparity map in depth perception sample")
